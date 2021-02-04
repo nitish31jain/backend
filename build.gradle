@@ -26,6 +26,7 @@ dependencies {
 	implementation 'org.liquibase:liquibase-core:3.8.0'
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'mysql:mysql-connector-java:8.0.22'
+	compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
 	annotationProcessor 'org.projectlombok:lombok'
 	compile group: 'com.opencsv', name: 'opencsv', version: '4.1'
 	compile "net.sf.dozer:dozer:5.5.1"
