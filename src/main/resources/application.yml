@@ -1,0 +1,17 @@
+spring:
+  security:
+    user:
+      name: user
+      password: user_sparksense$101#
+      role: admin
+
+server:
+  port: 8181
+
+web-scraper:
+  url:
+    base: https://api.webscraper.io
+    account-info-path: /api/v1/account?api_token={apiToken}
+    download-csv-path: /api/v1/scraping-job/{jobId}/csv?api_token={apiToken}
+  auth:
+    token: hWuvLJjwLTqmYbqWnT2X90e9HQDtHrePx2KFMJLosCqrKnyC9t6q3965ibrG

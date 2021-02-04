@@ -1,0 +1,66 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-job-posting-table
+      author: Nitish Jain
+      changes:
+        - createTable:
+            tableName: job_posting
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                  autoIncrement: true
+              - column:
+                  name: job_name
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: company_name
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: job_type
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: job_location
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: when_posted
+                  type: DATETIME(3)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: portal_name
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created_date_time
+                  type: DATETIME(3)
+                  constraints:
+                    nullable: false
+                  defaultValueComputed: now(3)
+              - column:
+                  name: modified_date_time
+                  type: DATETIME(3)
+                  constraints:
+                    nullable: false
+                  defaultValueComputed: now(3)
+              - column:
+                  name: created_by
+                  type: VARCHAR(100)
+              - column:
+                  name: last_modified_by
+                  type: VARCHAR(100)
+        - addUniqueConstraint:
+            tableName: job_posting
+            columnNames: job_name, company_name, job_type, job_location, when_posted
+            constraintName: UK_job_posting
